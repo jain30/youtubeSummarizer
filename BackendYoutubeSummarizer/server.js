@@ -1,9 +1,12 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv"; // Use ES Module import
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
-const API_KEY = "AIzaSyCBgEHKaiz6XcBBgQjcnnBKJq8S5M_8deY";
+const API_KEY = process.env.GOOGLE_API_KEY;
+console.log(API_KEY);
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
